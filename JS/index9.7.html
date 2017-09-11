@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>映射，筛选，回调,深拷贝与递归函数</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+// 把函数当作参数使用，使操作跟简单
+// 	function aa(num1,num2){
+// 		return num1*num2-num1
+// 	}
+// 	function bb(num1,num2){
+// 		return num1*num2+num1
+// 	}
+// 	function cc(num1,num2){
+// 		return num1/num2-num1
+// 	}
+
+// console.log(math(6,9,aa))
+	
+// 	function math(num1,num2,fn){
+// 		return fn(num1,num2)
+// 	}
+
+
+
+// 映射(对应关系map)
+	function map(arr, fn){
+ 		var newarr=[];
+ 		for(var e=0; e<arr.length; e++){
+ 			newarr[newarr.length]=fn(arr[e]);
+ 		}
+ 		return newarr;
+ 	}
+
+
+
+var dack=[2,3,4,1,1,8,15]
+var zxc=map(dack,function(value){
+	return value-5;
+})
+console.log(zxc)
+
+
+
+// 筛选
+	function filter(arr,fn){
+		var newarr=[];
+		for(var f=0; f<arr.length; f++){
+			newarr[newarr.length]=fn(arr[f]);
+		}
+	// return newarr;	
+	}
+
+var dack=[2,3,4,1,1,8,15]
+var zxc=filter(dack,function(value){
+	return value>5;
+})
+console.log(zxc)
+
+
+
+// 反转
+// 某个特定元素在一个数组中是否拥有，拥有的话首次出现在index0f第几个元素
+// 	function exum(arr, value){
+// 		for(var a=0; a<arr.length; a++){
+// 			if(arr[a]==value){
+// 				return a;
+// 			}
+// 		}
+// 		return -1;
+// 	}
+
+// var arr=[2,3,4,1,1,[6],6,[1],4]
+// exum(arr,1)
+// console.log(exum(arr,1))
+
+
+
+// 某个特定元素在一个数组中是否拥有，拥有的话最后一次出现在lastindex0f第几个元素
+// 	function lastindex0f(arr, value){
+// 		for(var a=arr.length-1; a>=0; a--){
+// 			if(arr[a]==value){
+// 				return a;
+// 			}
+// 		}
+// 		return -1;
+// 	}
+
+// var arr=[2,3,4,1,1,[6],6,[1],4]
+// exum(arr,1)
+// console.log(exum(arr,6))
+
+
+// 倒着放一个数组
+// 	function reverse(arr){
+// 		var bbc=[]
+// 		for(var b=arr.length-1; b>=0; b--){
+// 			// bbc(bbc.length)=arr[b];
+// 			push(bbc,arr[b])
+// 		}
+// 		return bbc;
+// 	}
+// 	function push(arr,...rest){
+// 		for(var i=0; i<rest.length; i++){
+// 			arr[arr.length]=rest[i];
+// 		}
+// 	}
+// var arr=[2,3,4,1,1,[6],6,[1],4]
+// console.log(reverse(arr))
+
+
+// 在数组的任意的位置(万能)的添加和删除(arr是数组，pos是位置，num是几个，...rest是添加的元素)
+// 万能(任意的位置)的删除
+// 	function splice(arr,pos,num){
+// 		var newarr=[]
+// 		for(var c=0; c<arr.length; c++){
+// 			if(c>=pos &&c<pos+num){
+// 				continue;
+// 			}
+// 			newarr[newarr.length]=arr[c]
+// 		}
+// 		return newarr;
+// 	}
+
+// var arr=[2,3,4,1,1,[6],6,[1],4]
+// console.log(splice(arr,4,2))
+
+// 万能(任意的位置)的添加
+// 	function spliceAdd(arr,pos,...rest){
+// 		var newarr=[];
+// 		for(var d=0; d<pos; d++){
+// 			newarr[newarr.length]=arr[d]
+// 		}
+// 		for(var d=0; d<rest.length; d++){
+// 			newarr[newarr.length]=rest[d]
+// 		}
+// 		for(var d=pos; d<arr.length; d++){
+// 			newarr[newarr.length]=arr[d]
+// 		}
+// 		return newarr;
+// 	}
+
+
+// var arr=[2,3,4,1,1,[6],6,[1],4]
+// console.log(spliceAdd(arr,4,'b','rt',7))
+
+// 万能(任意的位置)的添加和删除合并起来
+	// function fnney(arr,pos,num,...rest){
+	// 	var newarr11=splice(arr,pos,num);
+	// 	if(rest.length){
+	// 		newarr11=spliceAdd(newarr,pos,...rest);
+	// 	}
+	// 	return newarr11;
+	// }
+
+
+
+// 某个特定元素在一个数组中是否拥有(全部都要满足every)
+// 	function every(arr,fn){
+// 		for(var i=0; i<arr.length; i++){
+// 			if(!fn(arr[i])){
+// 				return false;
+// 			}
+// 		}
+// 		return true;
+// 	}
+// // （只要有一个满足some）
+// 	function some(arr,fn){
+// 		for(var i=0; i<arr.length; i++){
+// 			if(fn(arr[i])){
+// 				return true;
+// 			}
+// 		}
+// 		return false;
+// 	}
+
+// var dack=[2,3,4,1,1,8,15]
+// var zxc=some(dack,function(value){
+// 	return value>5;
+// })
+// console.log(zxc)
+
+// var zxc=every(dack,function(value){
+// 	return value>5;
+// })
+// console.log(zxc)
+
+
+// 递归函数(不是一个循环)
+	// fn(1)
+	// function fn(num){
+	// 	if(num<5){
+	// 		fn(++num)
+	// 	}
+	// 	alert(num)
+	// }
+
+
+// 浅拷贝
+	// var arr=[1,2,3,4,5,6,7,8];
+	// var arr1=arr;
+	// arr1[1]='a';
+	// arr[3]='x';
+	// console.log(arr)
+	// console.log(arr1)
+// 深拷贝
+	// var arr1=[];
+	// for(var i=0; i<arr.length; i++){
+	// 	arr1[i]=arr[i];
+	// }
+	// arr1[1]='a';
+	// arr[1]='x';
+	// console.log(arr)
+	// console.log(arr1)
+
+// 深拷贝与递归函数的应用
+	var arr=[1,2,3,4,5,6,['a','b','c',7,8,'d']];
+	var arr1=copy(arr);
+	console.log(arr1);
+
+	function copy(arr){
+		var newarr=[];
+		for(var g=0; g<arr.length; g++){
+			if(typeof arr[g]=='object'){
+				newarr[g]=copy(arr[g]);
+			}else{
+				newarr[g]=arr[g]
+			}
+		}
+		return newarr;
+	}
+</script>
