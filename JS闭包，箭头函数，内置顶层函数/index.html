@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+// 闭包函数
+	// function fn(){for
+	// 	var num=10;
+	// 	return fn1;
+	// 	function fn1(){
+	// 		num++;
+	// 		return num;
+	// 	}
+	// }
+// var result =fn();
+// alert(result());
+
+
+// 箭头函数
+	// var fn=function(a){
+	// 	return a;
+	// }
+	// 等价于
+	// var fn=(a)=>a;
+	
+	// var fn1= (a,b) =>{
+	// 	alert(a+b);
+	// 	alert(a-b);
+	// 	alert(a*b);
+	// 	alert(a%b);
+	// }
+// fn1(3,6);
+
+
+// 三种声明方式var,let,const
+	for(var i=0; i<10; i++){
+		function fn(i){
+			alert(i)
+		}
+	}
+
+
+	for(let i=0; i<10; i++){
+		function fn(i){
+			alert(i)
+		}
+	}
+
+	const pi=3.14;
+
+// let和var的区别-块阶区域的区别	
+	(function() {
+  		var varTest = 'test var OK.';
+ 		 let letTest = 'test let OK.';
+
+  	{
+    	var varTest = 'varTest changed.';
+    	let letTest = 'letTest changed.';
+  	}
+
+  	console.log(varTest); //输出"varTest changed."，内部"{}"中声明的varTest变量覆盖外部的letTest声明
+  	console.log(letTest); //输出"test let OK."，内部"{}"中声明的letTest和外部的letTest不是同一个变量
+	}());
+
+
+// 内置 顶层 函数
+	console.log(escape('张三'))
+	console.log(unescape('%u5F20%u4E09'))
+	console.log(Number('123'))
+	console.log(String(1))
+	console.log(Boolean(NaN))
+	console.log(parseInt('-100.09px'))
+	console.log(parseFloat('100.008px'))
+	console.log(isNaN('ABCD'))
+</script>
