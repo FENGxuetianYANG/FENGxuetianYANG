@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数打包</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+// 二重函数求最小值
+	// function fu1(ECarr){
+	// 	var ECarr=[
+	// 		[90,95,77],
+	// 		[95,89,88],
+	// 		[90,97,80],
+	// 	]
+	// 	var min=ECarr[0][0]
+	// 	for(var z=0; z<ECarr.length; z++){
+	// 		for(var k=0; k<ECarr.length; k++){
+	// 			if(min>ECarr[z][k]){
+	// 			min=ECarr[z][k]
+	// 			}
+	// 		}
+	// 	}
+	// 	console.log(min)
+	// }
+
+// 表格
+// 	function fu2(hang,lei){
+// 		document.write('<table border=1 cellspacing=0 align=center width(20)>')
+// 		for(var x=1; x<=hang; x++){
+// 			document.write("<tr>")
+// 			for(var y=1; y<=lei; y++){
+// 			document.write('<td>'+x+'-'+y+'</td>')
+// 			}
+// 			document.write("</tr>")
+// 		}
+// 		document.write('</table>')
+// 	}
+
+
+// fu2(5,6)
+
+// 金字塔型
+// 	function fu3(rpw99){
+// 		var row=rpw99;
+// 		for(var q=1; q<=row; q++){
+// 			for(var r=1; r<=row-q; r++){
+// 				document.write("&nbsp")
+// 			}
+// 			for(var r=1; r<=2*q-1; r++){
+// 				document.write("$")
+// 			}
+// 			document.write("<br>")
+// 		}
+// 	}
+
+
+// fu3(10)
+
+// 数组升序排列
+// 	function fu4(sortu1){
+// 		for(var m=0; m<sortu1.length; m++){
+// 			for(var n=m+1; n<sortu1.length; n++){
+// 				if(sortu1[n]<sortu1[m]){
+// 					o=sortu1[m]
+// 					sortu1[m]=sortu1[n]
+// 					sortu1[n]=o
+// 				}
+// 			}
+// 		}
+// 		console.log(sortu1)
+// 	}
+
+
+// var bbc=[10,20,30,35,7,57,91]
+// fu4(bbc)
+	
+
+
+// 数组降序排列
+// 	function fu5(sortdow1){
+// 		for(var m=0; m<sortdow1.length; m++){
+// 			for(var n=m+1; n<sortdow1.length; n++){
+// 				if(sortdow1[n]>sortdow1[m]){
+// 					o=sortdow1[m]
+// 					sortdow1[m]=sortdow1[n]
+// 					sortdow1[n]=o
+// 				}
+// 			}
+// 		}
+// 		console.log(sortdow1)
+// 	}
+
+
+// var bbc=[10,20,30,35,7,57,91]
+// fu5(bbc)
+	
+
+// 将arguments数放入数组中
+	// var arr=[1,2,3,4,5,6]
+	// push=[arr,'a','bc','d','efg']
+	// function fn6(Arr){
+	// 	for(var x=1; x<arguments.length; x++){
+	// 		arr[arr.length] = arguments[x]
+	// 	}
+	// 	console.log(Arr)
+	// }
+
+
+// 某个特定元素在一个数组中是否拥有(只要有一个满足some,全部都要满足every)
+	function fn7(aRr,value){
+		if( !(typeof aRr =='object' && arguments.length>1)){
+			return '输入错误';
+		}
+		for(var i=0; i<aRr.length; i++){
+			if(aRr[i]==value){
+				return true;
+			}
+		}
+		return false;
+	}
+
+var bbc=[10,20,30,35,7,57,91]
+var result=fn7(bbc ,7)
+alert(result)
+
+// 某个特定元素在一个数组中是否拥有(全部都要满足every)
+	function every(arr,fn){
+		for(var i=0; i<arr.length; i++){
+			if(!fn(arr[i])){
+				return false;
+			}
+		}
+		return true;
+	}
+// 数组里的元素转换字符串
+	function fn8(ajsp,type){
+		type=type||'-';
+		var result='';
+		for(var i=0; i<ajsp.length; i++){
+			if(i<ajsp.length-1){
+				result=ajsp[i]+type
+			}else{
+				result=ajsp[i]
+			}
+		}
+	return result;
+	// console.log(result)
+	
+	//return和result不能同时使用
+	//同时使用时需要把result赋值到新的变量上
+	}
+
+	
+var bbc=[10,20,30,35,7,57,91]
+fn8(bbc)
+
+
+// 数组里筛选filter出满足条件的元素
+	function fn9(arr){
+		var newarr=[]
+		for(var z=0; z<arr.length; z++){
+			if(arr[z]%2==0){
+				newarr[newarr.length]=arr[z]
+			}
+		}
+		return newarr
+	}
+
+var bbc=[10,20,30,35,7,57,91]
+fn9(bbc)
+	
+</script>
