@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	// 1.数字从大到小排列
+	var bbc=[33,11,22,71,9,5,17,55]
+	for(var a=0; a<bbc.length; a++){
+		for(var b=a+1; b<bbc.length; b++){
+			if(bbc[a]<bbc[b]){
+			var c=bbc[a]
+			bbc[a]=bbc[b]
+			bbc[b]=c
+			}
+		}
+	}
+	console.log(bbc)
+
+
+	//2.去掉空的数组元素
+	var abc=[1,,3,4,,6,7,8,9]
+	// console.log(abc)
+	var bcb=[]
+	for(var a=0; a<abc.length; a++){
+		if(abc[a]==undefined){
+			continue
+		}else{
+			bcb[bcb.length]=abc[a]
+		}
+	}
+	console.log(bcb)
+
+	var bcc=[]
+	for(var a=0; a<abc.length; a++){
+		if(abc[a]!=undefined){
+		bcc[bcc.length]=abc[a]
+		}
+	}
+	console.log(bcc)
+
+
+	//3.二重数组内最大值
+	var zhangsan=[90,95,77]
+	var lisi=[95,89,88]
+	var wangwu=[90,97,80]
+	var bangji=[zhangsan,lisi,wangwu]
+	var min=bangji[0][0]
+	for(var z=0; z<bangji.length; z++){
+		for(var k=0; k<bangji.length; k++){
+			if(min>bangji[z][k]){
+				min=bangji[z][k]
+			}
+		}
+	}
+	console.log(min)
+</script>
