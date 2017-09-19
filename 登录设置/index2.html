@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index2.css">
+</head>
+<body>
+	<section>
+		<div><h3>输入有误</h3></div>
+		<div>
+			<span id="pxp">5</span> 秒后自动返回
+		</div>
+	</section>
+</body>
+</html>
+<script>
+	let pxp=document.getElementById('pxp');
+	
+	setInterval(fn,1000);
+	function fn(){
+		if(pxp.innerText<=0){
+			location.replace('index1.html');
+		}else{
+			pxp.innerText=pxp.innerText-1;
+		}
+	}
+	
+		
+</script>

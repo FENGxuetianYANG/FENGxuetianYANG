@@ -1,0 +1,32 @@
+/*
+* @Author: 11
+* @Date:   2017-09-15 17:58:29
+* @Last Modified by:   11
+* @Last Modified time: 2017-09-18 14:03:57
+*/
+*{
+	margin: 0;
+}
+body{
+	width: 100%;
+	height: 1000px;
+	background: rgba(0, 0, 0, 0.5);
+}
+section{
+	width: 33.333333%;
+	height: 200px;
+	background: white;
+	text-align: center;
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+
+}
+span{
+	text-align: center;
+	color: black;
+}
