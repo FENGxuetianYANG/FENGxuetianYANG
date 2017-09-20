@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表格</title>
+</head>
+<body>
+<tr bg>	</tr>
+<td></td>
+</body>
+</html>
+<script>
+	// 表格
+	document.write('<table border=1 cellspacing=0 align=center width(20)>')
+	for(var x=1; x<=10; x++){
+		document.write("<tr>")
+		for(var y=1; y<=8; y++){
+			document.write('<td>'+x+'-'+y+'</td>')
+		}
+		document.write("</tr>")
+	}
+	document.write('</table>')
+
+	// 九九乘法表
+	document.write('<table border=1 cellspacing=0 align=left width(20)>')
+	for(var m=1; m<=9; m++){
+		document.write("<tr>")
+		for(var n=1; n<=m; n++){
+			document.write('<td>'+n+'*'+m+'='+(m*n)+'</td>')
+		}
+		document.write("</tr>")
+	}
+	document.write('</table>')
+
+	// 行换色
+	document.write('<table border=1 cellspacing=0 align=right width(20)>')
+	for(var x=1; x<=10; x++){
+		document.write("<tr>")
+			if (x%2==0) {
+				document.write('<tr bgcolor="red">')
+			}else{
+				document.write('<tr bgcolor="pink">')
+			}
+			for(var y=1; y<=8; y++){
+				document.write('<td>'+x+'-'+y+'</td>')
+			}
+		document.write("</tr>")
+	}
+	document.write('</table>')
+
+	// 列换色
+	document.write('<table border=1 cellspacing=0 align=center width(20)>')
+	for(var m=1; m<=9; m++){
+		document.write("<tr>")
+		for(var n=1; n<=m; n++){
+			if(n%2==0){
+			document.write('<td bgcolor="green">'+m+'*'+n+'='+(m*n)+'</td>')
+			}else{
+			document.write('<td bgcolor="blue">'+m+'*'+n+'='+(m*n)+'</td>')
+			}
+		}
+		document.write("</tr>")
+	}
+	document.write('</table>')
+
+	// 字符串拼接表格
+	var table='<table>'
+	for(var o=1; o<11; o++){
+		// console.log(o)
+		table=table+'<tr>'
+		for(var p=1; p<11; p++){
+			table=table+'<td>111</td>'
+		}
+		table=table+'</tr>'
+		// document.write('<br>')
+	}
+	table=table+'</table>'
+	document.write(table)
+
+	// 金字塔型
+	var row=5;
+	for(var q=1; q<=row; q++){
+		for(var r=1; r<=row-q; r++){
+			document.write("&nbsp")
+		}
+		for(var r=1; r<=2*q-1; r++){
+			document.write("$")
+		}
+		document.write("<br>")
+	}
+
+	// 1 1 2 3 5 8 13......
+	var a=1,b=1;
+	for(var c=0;c<=100;){
+		c=a+b;
+		document.write(c+"&nbsp")
+		a=b;
+		b=c;
+	}
+</script>
