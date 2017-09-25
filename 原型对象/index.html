@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function person(){
+		this.name='zhangsan';
+		this.age=18
+		this.classes='WUIF1707'
+	}
+	person.prototype={
+		say:function(){
+			alert(`$my name is(this.name)`)
+		},
+		play:function(){
+			alert(this.say)
+		},
+	}
+
+	person.prototype.eat=function(){
+		alert('eat')
+	}
+	let lisi=new person;
+	let wangwu=new person;
+	console.log(lisi);
+
+// 删除对象
+	wangwu=null;
+// 删除属性
+	delete lisi.age;
+
+
+// 判断某个对象是某个函数实例化出来的
+	let arr=[];
+	console.log(arr instanceof Array)
+
+
+
+// 继承
+	function country(){
+		this.nationality='china';
+		this.color='red';
+		this.say=function(){
+			alert('和平至上')
+		}
+	}
+	function people(){
+		this.name='zhaoqi';
+		this.age=20;
+		this.eat=function(){
+			alter('菜谱')
+		}
+	}
+	
+	people.prototype=new country;
+	
+	let china=new country();
+	let zhaoqi=new people();
+	console.log(zhaoqi);         
+</script>
