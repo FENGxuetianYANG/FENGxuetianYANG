@@ -1,0 +1,75 @@
+/*
+* @Author: 11
+* @Date:   2017-09-23 10:42:18
+* @Last Modified by:   11
+* @Last Modified time: 2017-09-23 10:51:55
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 微软雅黑 ，宋体，sans-serif;
+	text-decoration: none;
+}
+img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.danping{
+	width: 1226px;
+	height: 424px;
+	margin: 0 auto;
+}
+.tittle{
+	width: 1226px;
+	height: 84px;
+	margin: 0 auto;
+	font-size: 20px;
+	font-weight: bold;
+	color: #333333;
+	line-height: 84px;
+}
+.tittle span{
+	display: block;
+	width: 200px;
+	height: 84px;
+	float: left;
+}
+.tittle-left{
+	background: url('../img/icon-slides.png') no-repeat -87px 0;
+	width: 40px;
+	height: 60px;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-left: 900px; 
+	float: left;
+	border: none;
+}
+.tittle-right{
+	background: url('../img/icon-slides.png') no-repeat -132px 0;
+	width: 40px;
+	height: 60px;
+	cursor: pointer;
+	margin-top: 10px;
+	float: right;
+	border: none;
+}
+.win{
+	width: 1226px;
+	height: 340px;
+	overflow: hidden;
+}
+.danpingtu{
+	width: 3720px;
+	height: 340px;
+	margin: 0 auto;
+	transform: translateX(0);
+	transition: all ease 2s;
+}
+.danpingtu li{
+	width: 234px;
+	height: 340px;
+	float: left;
+	margin-right: 14px;
+}
